@@ -1,11 +1,14 @@
-import { prisma } from '@/lib/db';
+import { useTRPC } from "@/trpc/client";
 
 const Page = async () => {
-  const posts = await prisma.post.findMany();
+  const trpc = useTRPC();
+  trpc.createAI.queryOptions({ text: "Hello!" });
+
+  // localhost:3000/api/create-ai?body={"text":"Hello!"}
 
   return (
     <div>
-      {JSON.stringify(posts, null, 2)}
+      Hello World
     </div>
   );
 }
