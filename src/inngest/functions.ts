@@ -1,4 +1,4 @@
-import { grok, createAgent } from "@inngest/agent-kit";
+import { gemini, createAgent } from "@inngest/agent-kit";
 
 import { inngest } from "./client";
 
@@ -8,12 +8,12 @@ export const helloWorld = inngest.createFunction(
   async ({ event }) => {
     const codeAgent = createAgent({
       name: "code-agent",
-      system: "You are an expert nextjs developer.  You write readable, maintainable code. You write simple Next.js & React snippets.",
-      model: grok({ model: "grok-3-latest" }),
+      system: "You are an expert nextjs developer. You write readable, maintainable code. You write simple Next.js & React snippets.",
+      model: gemini({ model: "gemini-1.5-flash-8b" }),
     });
 
-    const { output } = await codeAgent.run( 
-        `Write the following snippet: ${event.data.value}`,
+    const { output } = await codeAgent.run(
+      `Write the following snippet: ${event.data.value}`,
     );
 
     return { output };
