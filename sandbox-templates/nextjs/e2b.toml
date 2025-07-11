@@ -11,7 +11,7 @@
 # const sandbox = await Sandbox.create('vibe-nextjs-development-2')
 
 team_id = "078a0a7f-b9eb-4f69-9a25-9918d5fadf1a"
-start_cmd = "C:/Program Files/Git/compile_page.sh"
+start_cmd = "/compile_page.sh"
 dockerfile = "e2b.Dockerfile"
 template_name = "vibe-nextjs-development-2"
 template_id = "pb40k2antt5z7pbxvxz4"
