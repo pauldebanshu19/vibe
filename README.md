@@ -40,6 +40,7 @@ Create a `.env` file in the root directory and add the following:
 DATABASE_URL=your_database_url
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 GEMINI_API_KEY=your_openai_api_key
+E2B_API_KEY=your_e2b_api_key
 ```
 
 - Ensure your `OPENAI_API_KEY` is a single line with no quotes or line breaks.
@@ -60,9 +61,15 @@ e2b template build --alias your-unique-alias
 
 - The alias must be unique. If you see an error about the alias already being used, change it in the command or in `e2b.toml`.
 - If the build fails, check the logs for details or try building the Dockerfile locally with:
-  ```
+  ```bash
   docker build -f sandbox-templates/nextjs/e2b.Dockerfile .
   ```
+
+## Troubleshooting
+
+- If you get an error about the OpenAI API key, check your `.env` for line breaks, spaces, or quotes.
+- For E2B template build errors, review the logs above the error for details. Most issues are due to Dockerfile problems, missing files, or alias conflicts.
+- You can delete or change the template alias in `e2b.toml` if needed.
 
 ## Learn More
 
