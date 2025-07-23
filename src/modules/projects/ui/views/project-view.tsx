@@ -20,6 +20,7 @@ export const ProjectView = ({ projectId }:Props) => {
     const { data: messages } = useSuspenseQuery(trpc.messages.getMany.queryOptions({
         projectId: projectId,
     }));
+    
 
     return (
         <div className="h-screen">
